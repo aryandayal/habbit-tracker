@@ -1,57 +1,44 @@
 import React from "react";
-import BookCard from "../components/BookCard";
-import { Link } from "react-router-dom";
+import HabitCard from "../components/HabitCard";
+import {
+  Box,
+  Card,
+  CardBody,
+  Heading,
+  Link as ChakraLink,
+  Text,
+  useDisclosure,
+} from "@chakra-ui/react";
+import CreateHabitModal from "../components/CreateHabitModal";
 import { useAppContext } from "../context/AppContextProvider";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const {
-    state: { books },
+    state: { habits },
   } = useAppContext();
 
-  const sections = [
-    {
-      id: "1",
-      name: "Currently Reading",
-      sectionBooks: books.filter(({ shelf }) => shelf === "currentlyReading"),
-    },
-    {
-      id: "2",
-      name: "Want to Read",
-      sectionBooks: books.filter(({ shelf }) => shelf === "wantToRead"),
-    },
-    {
-      id: "3",
-      name: "Read",
-      sectionBooks: books.filter(({ shelf }) => shelf === "read"),
-    },
-  ];
+  console.log(habits);
 
   return (
-    <main className="home-page">
-      <div className="nav-link">
-        <Link to="/search" className="search-link">
-          Search
-        </Link>
-      </div>
-
-      {sections.map((section) => {
-        return (
-          <section key={section.id}>
-            <h1>{section.name}</h1>
-
-            <div className="books-container">
-              {section.sectionBooks.length > 0 ? (
-                section.sectionBooks.map((book) => (
-                  <BookCard key={book._id} book={book} />
-                ))
-              ) : (
-                <h2>No Books in this Shelf</h2>
-              )}
-            </div>
-          </section>
-        );
-      })}
-    </main>
+    <Box as="main" p={4}>
+      <ChakraLink as={Link} to="/archive">
+        Archives
+      </ChakraLink>
+      <Heading textAlign="center">Habits</Heading>
+      <Box as="main" w="full">
+        <Card maxW="sm" _hover={{ cursor: "pointer" }} onClick={onOpen}>
+          <CardBody>
+            <Text>Create Habit</Text>
+          </CardBody>
+        </Card>
+        <CreateHabitModal isOpen={isOpen} onClose={onClose} />
+        {habits.map((habit) => (
+          <HabitCard key={habit.id} habit={habit} />
+        ))}
+      </Box>
+    </Box>
   );
 };
 
