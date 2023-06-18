@@ -83,9 +83,9 @@ const EditHabitModal = ({ isOpen, onClose, habit }) => {
                     value={habitDetails.goal}
                     onChange={(e) => inputHandler(e, "goal")}
                   >
-                    <option value="one">1 time daily</option>
-                    <option value="two">2 times daily</option>
-                    <option value="three">3 times daily</option>
+                    <option value="1 time daily">1 time daily</option>
+                    <option value="2 times daily">2 times daily</option>
+                    <option value="3 times daily">3 times daily</option>
                   </Select>
                 </FormControl>
               </Flex>
@@ -96,11 +96,11 @@ const EditHabitModal = ({ isOpen, onClose, habit }) => {
                     value={habitDetails.timeOfDay}
                     onChange={(e) => inputHandler(e, "timeOfDay")}
                   >
-                    <option value="any">Any Time</option>
-                    <option value="morning">Morning</option>
-                    <option value="afternoon">Afternoon</option>
-                    <option value="evening">Evening</option>
-                    <option value="night">Night</option>
+                    <option value="Any Time">Any Time</option>
+                    <option value="Morning">Morning</option>
+                    <option value="Afternoon">Afternoon</option>
+                    <option value="Evening">Evening</option>
+                    <option value="Night">Night</option>
                   </Select>
                 </FormControl>
                 <FormControl>
@@ -109,9 +109,9 @@ const EditHabitModal = ({ isOpen, onClose, habit }) => {
                     value={habitDetails.startDate}
                     onChange={(e) => inputHandler(e, "startDate")}
                   >
-                    <option value="today">Today</option>
-                    <option value="tomorrow">Tomorrow</option>
-                    <option value="nextWeek">Next Week</option>
+                    <option value="Today">Today</option>
+                    <option value="Tomorrow">Tomorrow</option>
+                    <option value="Next Week">Next Week</option>
                   </Select>
                 </FormControl>
               </Flex>

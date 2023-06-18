@@ -19,11 +19,11 @@ const HabitDetailsModal = ({ isOpen, onClose, habit }) => {
         <ModalCloseButton />
         <ModalBody justifyContent="space-between" mb={4}>
           <Flex flexDir="column" gap={4}>
-            <Text>Name: {habit?.title}</Text>
-            <Text>Repeat: {habit?.repeat}</Text>
-            <Text>Goal: {habit?.goal}</Text>
-            <Text>Time of day: {habit?.timeOfDay}</Text>
-            <Text>Start date: {habit?.startDate}</Text>
+            <Text>Name : {habit?.title}</Text>
+            <Text>Repeat : {habit?.repeat}</Text>
+            <Text>Goal : {habit?.goal}</Text>
+            <Text>Time of day : {habit?.timeOfDay}</Text>
+            <Text>Start date : {habit?.startDate}</Text>
           </Flex>
         </ModalBody>
       </ModalContent>

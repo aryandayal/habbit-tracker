@@ -1,6 +1,23 @@
 import { createContext, useContext, useReducer } from "react";
 
-const habitsDB = [];
+const habitsDB = [
+  {
+    id: "1",
+    title: "Meditate",
+    repeat: "Daily",
+    goal: "1 time daily",
+    timeOfDay: "Any Time",
+    startDate: "Today",
+  },
+  {
+    id: "2",
+    title: "Read Books",
+    repeat: "Daily",
+    goal: "2 times daily",
+    timeOfDay: "Afternoon",
+    startDate: "Tomorrow",
+  },
+];
 
 const AppContext = createContext({
   state: {},

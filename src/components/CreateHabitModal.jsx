@@ -22,9 +22,9 @@ import { useAppContext } from "../context/AppContextProvider";
 const habitInitialState = {
   title: "",
   repeat: "Daily",
-  goal: "one",
-  timeOfDay: "any",
-  startDate: "today",
+  goal: "1 time daily",
+  timeOfDay: "Any Time",
+  startDate: "Today",
 };
 
 const CreateHabitModal = ({ isOpen, onClose }) => {
